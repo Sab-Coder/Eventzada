@@ -1,0 +1,2 @@
+# Eventzada
+Event Management System
