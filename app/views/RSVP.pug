@@ -1,0 +1,50 @@
+extends layout
+block content
+    main.container.py-5
+      div.row
+        div.col-md-6.offset-md-3
+          form(method="post", action="/reserve-booking")
+            div.form-group
+              label(for="name") Name
+              input.form-control(type="text", name="name", required)
+            div.form-group
+              label(for="email") Email
+              input.form-control(type="email", name="email", required)
+            div.form-group
+              label(for="phone") Phone
+              input.form-control(type="tel", name="phone", required)
+            div.form-group
+              label(for="address") Address
+              input.form-control(type="text", name="address", required)
+            div.form-group
+              label(for="wedding-date") Wedding Date
+              input.form-control(type="date", name="wedding-date", required)
+            div.form-group
+              label(for="guest-count") Number of Guests
+              input.form-control(type="number", name="guest-count", required)
+            div.form-group
+              label(for="message") Message
+              textarea.form-control(name="message", rows="5")
+            button.btn.btn-primary(type="submit") Reserve Booking
+
+//- doctype html
+//- html(lang="en")
+  head
+    title User Profile Form - Wedding Reservation
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+  body
+    //- nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    //-   a.navbar-brand(href="#") Wedding Reservation
+    //-   button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarResponsive", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+    //-     span.navbar-toggler-icon
+    //-   div#navbarResponsive.collapse.navbar-collapse
+    //-     ul.navbar-nav.mr-auto
+    //-       li.nav-item.active
+    //-         a.nav-link(href="#") Home
+    //-       li.nav-item
+    //-         a.nav-link(href="#about") About
+    //-       li.nav-item
+    //-         a.nav-link(href="#services") Services
+    //-       li.nav-item
+    //-         a.nav-link(href="#contact") Contact
