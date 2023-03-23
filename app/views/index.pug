@@ -1,0 +1,78 @@
+extends layout
+block content
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+  body
+    //- nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    //-   a.navbar-brand(href="#") EVENTZAADE
+    //-   button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarResponsive", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+    //-     span.navbar-toggler-icon
+    //-   div#navbarResponsive.collapse.navbar-collapse
+    //-     ul.navbar-nav.mr-auto
+    //-       li.nav-item.active
+    //-         a.nav-link(href="#") Home
+       
+    //-       li.nav-item
+    //-         a.nav-link(href="#SERVICES") SERVICES
+    //-       li.nav-item 
+    //-         a.nav-link(href="RSVP") RSVP
+    //-       li.nav-item
+    //-         a.nav-link(href="#contact") Contact
+    header.masthead
+      div.container.h-100
+        div.row.h-100.align-items-center
+          div.col-lg-7
+            div.text-center.text-lg-left
+              h1.display-4 My Wedding
+              hr
+              h2 This is our big day
+              h2 where there is a will there is a way
+          div.col-lg-5
+            img.img-fluid(src="https://ruffledblog.com/wp-content/uploads/2021/03/intimate-wedding-major-benefits-03.jpg", alt="")
+    section#about
+      div.container
+        div.row
+          div.col-lg-12.text-center
+            h2 About Us
+            hr
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae mauris justo. Nam eget mauris consequat, laoreet velit eu, hendrerit ex. Morbi facilisis, velit in egestas eleifend, arcu felis ornare libero, a elementum magna justo sed ante.
+    section#services.bg-light
+      div.container
+        div.row
+          div.col-lg-12.text-center
+            h2 SERVICES
+            hr
+          div.col-md-6
+            div.card
+              div.card-body
+                h5.card-title Wedding Planning
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae mauris justo. Nam eget mauris consequat, laoreet velit eu, hendrerit ex.
+                a.btn.btn-primary(href="#") Learn More
+          div.col-md-6
+            div.card
+              div.card-body
+                h5.card-title Wedding Photography
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae mauris justo. Nam eget mauris consequat, laoreet velit eu, hendrerit ex.
+                a.btn.btn-primary(href="#") Learn More
+    section#contact
+      div.container
+        div.row
+          div.col-lg-12.text-center
+            h2 Contact Us
+            hr
+            div.container.text-center
+                a(href="https://www.facebook.com/") Facebook  | 
+                a(href="https://www.twitter.com/") Twitter   | 
+                a(href="https://www.instagram.com/") Instagram
+
+            
+       
+
+
+//- html 
+//-     head    
+//-         title EVENTZAADE
+//-     body
+//-        h1 Heading here...
+//-        p first paragraph xxx
