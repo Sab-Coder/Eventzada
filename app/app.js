@@ -1,5 +1,5 @@
 // Import express.js
-const express = require("express");
+var express = require("express");
 
 // Create express app
 var app = express();
@@ -10,11 +10,20 @@ app.use(express.static("static"));
 // Get the functions in the db.js file to use
 const db = require('./services/db');
 
+// Use the Pug templating engine
+app.set('view engine', 'pug');
+app.set('views', './app/views');
+
 // Create a route for root - /
 app.get("/", function(req, res) {
-    res.send("Hello world!");
+    // Set up an array of data
+    // Send the array through to the template as a variable called data
+    res.render("index");
 });
 
+app.get("/RSVP", function(req, res) {
+    res.render("RSVP");
+});
 // Create a route for testing the db
 app.get("/db_test", function(req, res) {
     // Assumes a table called test_table exists in your database
