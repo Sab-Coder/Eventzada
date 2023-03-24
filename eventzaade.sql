@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 23, 2023 at 11:23 AM
+-- Generation Time: Mar 24, 2023 at 07:23 PM
 -- Server version: 8.0.32
 -- PHP Version: 8.1.15
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Cake` (
   `id` int NOT NULL,
-  `Name` varchar(512) NOT NULL
+  `name` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `Cake`
 --
 
-INSERT INTO `Cake` (`id`, `Name`) VALUES
+INSERT INTO `Cake` (`id`, `name`) VALUES
 (1, 'Victoria Sponge Cake'),
 (2, 'Buttenburg Cake'),
 (3, 'Fruit Cake'),
@@ -92,25 +92,24 @@ INSERT INTO `Flowers` (`id`, `Name`) VALUES
 
 CREATE TABLE `UserProfile` (
   `id` int NOT NULL,
-  `FirstName` varchar(512) NOT NULL,
-  `LastName` varchar(512) NOT NULL,
-  `EmailId` varchar(512) NOT NULL,
-  `Contact` varchar(512) NOT NULL,
-  `Address` varchar(512) NOT NULL,
-  `CakeID` int DEFAULT NULL,
-  `DecorationsID` int DEFAULT NULL,
-  `FlowersID` int DEFAULT NULL,
-  `VenuesID` int DEFAULT NULL
+  `name` varchar(512) NOT NULL,
+  `emailid` varchar(512) NOT NULL,
+  `contact` varchar(512) NOT NULL,
+  `address` varchar(512) NOT NULL,
+  `cakeid` int DEFAULT NULL,
+  `decorationsid` int DEFAULT NULL,
+  `flowersid` int DEFAULT NULL,
+  `venuesid` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `UserProfile`
 --
 
-INSERT INTO `UserProfile` (`id`, `FirstName`, `LastName`, `EmailId`, `Contact`, `Address`, `CakeID`, `DecorationsID`, `FlowersID`, `VenuesID`) VALUES
-(1, 'Bob', 'Doe', 'bobdoe@gmail.com', '447645342267', 'Oak Avenue,TN27 8BT', 3, 1, 2, 5),
-(2, 'Jeff', 'Beth', 'jeffbeth@gmail.com', '447867543456', 'Holly House,SW27 8TH', 2, 3, 4, 9),
-(3, 'John', 'Fabrikam', 'johnfabrikam@gmail.com', '447356443327', 'Maple Widgets Ltd,DF56 89T', 4, 2, 1, 1);
+INSERT INTO `UserProfile` (`id`, `name`, `emailid`, `contact`, `address`, `cakeid`, `decorationsid`, `flowersid`, `venuesid`) VALUES
+(1, 'Bob Doe', 'bobdoe@gmail.com', '447645342267', 'Oak Avenue,TN27 8BT', 3, 1, 2, 5),
+(2, 'Jeff Beth', 'jeffbeth@gmail.com', '447867543456', 'Holly House,SW27 8TH', 2, 3, 4, 9),
+(3, 'John Fabrikam', 'johnfabrikam@gmail.com', '447356443327', 'Maple Widgets Ltd,DF56 89T', 4, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -166,10 +165,10 @@ ALTER TABLE `Flowers`
 --
 ALTER TABLE `UserProfile`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `CakeID` (`CakeID`),
-  ADD KEY `DecorationsID` (`DecorationsID`),
-  ADD KEY `FlowersID` (`FlowersID`),
-  ADD KEY `VenuesID` (`VenuesID`);
+  ADD KEY `CakeID` (`cakeid`),
+  ADD KEY `DecorationsID` (`decorationsid`),
+  ADD KEY `FlowersID` (`flowersid`),
+  ADD KEY `VenuesID` (`venuesid`);
 
 --
 -- Indexes for table `Venues`
@@ -185,10 +184,10 @@ ALTER TABLE `Venues`
 -- Constraints for table `UserProfile`
 --
 ALTER TABLE `UserProfile`
-  ADD CONSTRAINT `userprofile_ibfk_1` FOREIGN KEY (`CakeID`) REFERENCES `Cake` (`id`),
-  ADD CONSTRAINT `userprofile_ibfk_2` FOREIGN KEY (`DecorationsID`) REFERENCES `Decorations` (`id`),
-  ADD CONSTRAINT `userprofile_ibfk_3` FOREIGN KEY (`FlowersID`) REFERENCES `Flowers` (`id`),
-  ADD CONSTRAINT `userprofile_ibfk_4` FOREIGN KEY (`VenuesID`) REFERENCES `Venues` (`id`);
+  ADD CONSTRAINT `userprofile_ibfk_1` FOREIGN KEY (`cakeid`) REFERENCES `Cake` (`id`),
+  ADD CONSTRAINT `userprofile_ibfk_2` FOREIGN KEY (`decorationsid`) REFERENCES `Decorations` (`id`),
+  ADD CONSTRAINT `userprofile_ibfk_3` FOREIGN KEY (`flowersid`) REFERENCES `Flowers` (`id`),
+  ADD CONSTRAINT `userprofile_ibfk_4` FOREIGN KEY (`venuesid`) REFERENCES `Venues` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
